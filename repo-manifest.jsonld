@@ -8,7 +8,7 @@
     {
       "@id": "https://repolex.ai/r/tmbo/questionary/commit/5a68c2d3e1d4ed01b9692b487349be66014db65f",
       "git:hexsha": "5a68c2d3e1d4ed01b9692b487349be66014db65f",
-      "repolex:parseStatus": "metadata_complete"
+      "repolex:parseStatus": "ast_complete"
     },
     {
       "@id": "https://repolex.ai/r/tmbo/questionary/commit/8527dbb84aa5f62d23e0112b8bf31767e5139b64",
