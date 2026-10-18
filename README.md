@@ -1,1 +1,179 @@
-Initializing
+# Repolex Knowledge Graph of tmbo/questionary
+
+RDF knowledge graph data for [tmbo/questionary](https://github.com/tmbo/questionary), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download tmbo/questionary
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 5a68c2d3e1d4ed01b9692b487349be66014db65f
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── 5a68c2d3e1d4ed01b9692b487349be66014db65f
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 02f9092df1b42b8959294ff28f972e2bbe4d908c.nq.gz
+│   ├── 03452055e1ca4a73798448c839170cd09edf8cdd.nq.gz
+│   ├── 04559deff0583973ffd72d4293ef6e3cc21015aa.nq.gz
+│   ├── 051758ad92bc7439c61ac1fcc69aa641602f62a1.nq.gz
+│   ├── 05624efd689f7dda9ae75e7f49ced2b6caf6b364.nq.gz
+│   ├── 06dad9922aaf1f3a45a3c19064ce110902840067.nq.gz
+│   ├── 0cfadf2dae2b347e0aa18d4ba0e9f0966eac98bd.nq.gz
+│   ├── 10969991a0a221bd0f8d0d66c7b14c0155c00b91.nq.gz
+│   ├── 12eda1010d40a8bd185bdf21cf1788ba756a6d57.nq.gz
+│   ├── 167e9bf19ef868f077ec927d7a40e577b71f0d0b.nq.gz
+│   ├── 16ae62f901bab6c9c0e7e93c405fa3ddbbce45e2.nq.gz
+│   ├── 17d1307139576fecf06c29c5ea1d3c562710d272.nq.gz
+│   ├── 1f194dc65295ac774071b373582a8444d0821305.nq.gz
+│   ├── 24cf7e3b50f518ff6ae932b6713c0f1c3c219af3.nq.gz
+│   ├── 2737c3360ca1656d2b4507c5f463be6350fbc9c8.nq.gz
+│   ├── 28497f392c0ea2db1a2c9d9b8c67c258aab92a02.nq.gz
+│   ├── 2aea02764aa24e0684469dde690c067b5ab9c874.nq.gz
+│   ├── 2cca5d0db90618f2c425ad33ceb18cbbf59f3f8d.nq.gz
+│   ├── 2d728befcdeed1067cf6fcdedcd3e08b585fb398.nq.gz
+│   ├── 2e96691ae580a23e2c21bf77f1a134d77ca6a81b.nq.gz
+│   ├── 2fc5a9984a207caa0eb8b3f3ced31425051272a1.nq.gz
+│   ├── 3296309bef05303c143bafab4412c6c67abeb9cd.nq.gz
+│   ├── 341012aed24afca08e19933f4a67ade073ce2393.nq.gz
+│   ├── 391ddc21c0c09e6b13a4005b9c4c97a2d264c3dc.nq.gz
+│   ├── 3f73324fbc640db5cb755d43a1b11966eb6bdbe0.nq.gz
+│   ├── 40bccc7e6c4991cc4d3a2804a868a06f68248edb.nq.gz
+│   ├── 433ace5a818df1da16c2bd347a50b01783566d81.nq.gz
+│   ├── 46064b752164dda5d66c942cf47f8b315aa64655.nq.gz
+│   ├── 473534064ab964bb3dcb50f8971c4f8a2e0ca059.nq.gz
+│   ├── 47cbdd1df06859acbaed8733f9d3df495fa1cd2e.nq.gz
+│   ├── 47cee2fcfb1281fa29cc777521ab56c8a986755f.nq.gz
+│   ├── 47d4d4f36be400ac7b23b70666ad006f3469f4cc.nq.gz
+│   ├── 49f5910f19bf3a94b9d8929151ccca8f0491854d.nq.gz
+│   ├── 4b6134b2fed1efe6872e7b8179308eb4d948dacb.nq.gz
+│   ├── 4c4ae08f7075bfa7774292856df34b37e34da5ab.nq.gz
+│   ├── 4e27569fa0dafd2cc0519e1245e06a22829da8fb.nq.gz
+│   ├── 5146e51039b9abd10cbe4b4df83a4a129fb531d2.nq.gz
+│   ├── 515ace86c1cc4f289270c840e6867997c15c203a.nq.gz
+│   ├── 53845f5132608f1b8130d75c2d9d61c60443bcf7.nq.gz
+│   ├── 54138302acc03ebda05331ecce1b003304c31497.nq.gz
+│   ├── 55eb29787caeeee90eae29860bb3d1014f998a25.nq.gz
+│   ├── 561ce7f275740c174a05427cec160d9944010fc4.nq.gz
+│   ├── 56e5c3b817f352d939180839a602572bd15350f1.nq.gz
+│   ├── 57b537b9f24a574d33579c14951cd4344b01f2c1.nq.gz
+│   ├── 59c159237575a1da6003392fca60b1c8a7b7eee7.nq.gz
+│   ├── 5b066339c460acec9158351eb3b7eb0015caf1a7.nq.gz
+│   ├── 5d8544f738f568f3590c4f1301df4e953be2cd86.nq.gz
+│   ├── 5e8254dc2104e1f423811f3221431a2e428ae9df.nq.gz
+│   ├── 5f1944d87c30dbcfb2a3f0dde402eca945296466.nq.gz
+│   ├── 663fd39abca9e7c7cbd3762d9e518b1bcdd2208e.nq.gz
+│   ├── 67837a61023beea9319f707d541ecbe7f52b8647.nq.gz
+│   ├── 67f191db00037874feeabf70edd1339a7834e46b.nq.gz
+│   ├── 69d7293c42012c6f58b5250546e34c99a5636c3b.nq.gz
+│   ├── 6a02fd6475449a01f075c57a993f147c0337c3a2.nq.gz
+│   ├── 6ba026bc690b5b2c18ff496b685476a137775cfc.nq.gz
+│   ├── 6bdb9c904d48d9766383843a8b8457a282df3573.nq.gz
+│   ├── 715637cc750573fe6ffb3b9685cd1e11ef9430e8.nq.gz
+│   ├── 73374103c9205987d335fd1e6126e474bae52e26.nq.gz
+│   ├── 7345c431ed501b40a240a8031016ca4de67a4ac4.nq.gz
+│   ├── 749f99fd45e1866dadaaab8bc37d3cae3ca3b6b5.nq.gz
+│   ├── 7ac9b1cbd7a0c1302642af50bfbf4f52cd56febc.nq.gz
+│   ├── 7b743d60f9b1954f6207f11422d9525226696605.nq.gz
+│   ├── 7dac7de39877b04520ec5b7d14b8586206ddcfad.nq.gz
+│   ├── 7fce2a81ab2bb6144bd2da1f0e7fdf15e3efbb6a.nq.gz
+│   ├── 82fb169bf7f1799c81ccd8f653bc9545c01bcd09.nq.gz
+│   ├── 83b179bd1ad837565934e48b7f504e6ef1754792.nq.gz
+│   ├── 845dd787cc73285e7102b555a7a6f6894dcea2c5.nq.gz
+│   ├── 89afc1d76213b4bc55171e260ce0ed3041bbd361.nq.gz
+│   ├── 8de2f4b2c7e0109b673e5636c62b65b9fa36ceba.nq.gz
+│   ├── 9243337d11558ce8d2eafcc3b57d3846dc0e6d15.nq.gz
+│   ├── 978ec8c236a5b66a6e38fc6a0a6261fb55b35704.nq.gz
+│   ├── 9a29756ffa384720b84eff7c35c7cbc0c3c67350.nq.gz
+│   ├── 9a9a84bee38851b7e136df0f5c6a9601e4053f57.nq.gz
+│   ├── 9aa3f90365fde8f020d7d8d42193f97c3d0660e1.nq.gz
+│   ├── a438e68aba930a0600805f8bdc11d3adf1c766cb.nq.gz
+│   ├── a52e125df9188c9beaed72dbfcd835f302c85da9.nq.gz
+│   ├── a82fcdac1a900e9e5c418dbf2f0d96ba8fea57be.nq.gz
+│   ├── abc67132a006216b5d5ed53938260af90b06038a.nq.gz
+│   ├── ac45363098053218984c027207205edd8963f855.nq.gz
+│   ├── b3cef5e2e55c7f5471d95bd5147a6ad5705c4c83.nq.gz
+│   ├── b564d8061c59b93323f5b354f3597950eed5606a.nq.gz
+│   ├── c092e65b2acf33a3cedff138b1f458bd1a6a9a0c.nq.gz
+│   ├── c185423b053b0021856af849dcc5350e9b56c0d7.nq.gz
+│   ├── c606685c0671788500eacbeffe11869da45c84b9.nq.gz
+│   ├── cac0ac2c3adf76297f4edf3b26345119e9e2fb1d.nq.gz
+│   ├── cbb5347ec29285e87333b69064a0eddeab411290.nq.gz
+│   ├── d4fb941932f962e15bc9484fb0599b4e978b75d5.nq.gz
+│   ├── d728e985bc0a73c86350fa0613d11d157dc274b8.nq.gz
+│   ├── d866c679a8230f8c74e0bbe63011804e41ad4526.nq.gz
+│   ├── d8f6a72f7aa445c9af5e5fe378b33cf06c264dee.nq.gz
+│   ├── e69de29bb2d1d6434b8b29ae775ad8c2e48c5391.nq.gz
+│   ├── e71fdcdc45eb4b23233578676058f086bdc6d76d.nq.gz
+│   ├── e91fa6029028e2b434e914ac6d8716f8d3137e21.nq.gz
+│   ├── ec52b18423ec56d71d6e31d60624686d37338649.nq.gz
+│   ├── ece2321998533cccf58d0d0ca731dcf8a00fad62.nq.gz
+│   ├── ee232c6beaa6cf6f6a1025bd0ee48ca4ac024510.nq.gz
+│   ├── efe3c850f744538dc1fbfa4248bff498a7eac632.nq.gz
+│   ├── f0f9c22343f01ed34edac887af9c75aae0484897.nq.gz
+│   ├── f739749cc204f1db10b8bfe1c47b7a4fe26336f0.nq.gz
+│   └── ffb4996abf4a870c00e63aa48c8d4302caf0e77e.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── 5a68c2d3e1d4ed01b9692b487349be66014db65f.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 108 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[tmbo/questionary](https://github.com/tmbo/questionary)
+
+---
+*Parsed on 2026-10-18 by [repolex](https://repolex.ai)*
